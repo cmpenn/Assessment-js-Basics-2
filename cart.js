@@ -36,9 +36,9 @@ const cart = [
 //CODE HERE
 
 const summedPrice = cart.reduce(function(acc, curr){
-    return acc + curr
-})
-console.log(cart)
+    return acc + curr.price
+}, 0)
+console.log(summedPrice)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -57,8 +57,11 @@ console.log(cart)
 */
 
 //CODE HERE
-
-
+function clacFinalPrice(cartTotal, couponValue, tax){
+    let newTax = 1 + tax
+    return cartTotal * newTax - couponValue
+}
+console.log(clacFinalPrice(20.87, 4, .06))
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -82,6 +85,7 @@ console.log(cart)
 
 /*
     TEXT ANSWER HERE
+// For my customer object I'm going to have name, age, sex, and job. I choose name because I think it's important for a resturant to know their customers. Age was because it's important to know what ages of people enjoy coming in. I choose sex because a resturant can theme a place based on if the resturant is more male of female dominated. Lastly I choose job so prices can be on the level of people that the resturant serves
 
 */
 
@@ -91,3 +95,9 @@ console.log(cart)
 */
 
 //CODE HERE
+let customer ={
+    name: 'Hank',
+    age: 22, 
+    sex: 'M',
+    job: 'Teacher'
+}
