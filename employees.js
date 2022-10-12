@@ -64,7 +64,7 @@ empOne.getSchedule()
 */
 
 //CODE HERE
-let empTwo  = empOne
+let empTwo  = {... empOne};
 empTwo.name = 'Nick'
 console.log(empTwo)
 

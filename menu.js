@@ -35,7 +35,7 @@ const pizza ={
     name: 'Meatlovers',
     price: 12.99,
     category: 'entree',
-    popularity: 1,
+    popularity: 10,
     rating: 20,
     tags: ['nonvegan', 'saucy']
 }
@@ -101,25 +101,41 @@ let foodArr = [{
     name: 'Cheese',
     price: 10.99,
     category: 'entree',
-    popularity: 3,
-    rating: 17,
-    tags: ['gluten free', 'kids']
+    popularity: 8,
+    rating: 8,
+    tags: ['gluten free', 'kids friendly']
 },
 {
     name: 'Pepperoni',
     price: 13.25,
     category: 'entree',
-    popularity: 1,
-    rating: 68,
-    tags: ['fan favorite', 'thin crust']
+    popularity: 10,
+    rating: 10,
+    tags: ['family friendly', 'thin crust']
 },
 {
     name: 'Barbecue Chicken',
-    price: 14.99,
+    price: 8,
     category: 'entree',
-    popularity: 2,
-    rating: 18,
+    popularity: 9,
+    rating: 7,
     tags: ['tasty', 'BBQ sauce']
+},
+{
+    name: 'Bagel',
+    price: 4,
+    category: 'entree',
+    popularity: 4,
+    rating: 18,
+    tags: ['bread', 'good']
+},
+{
+    name: 'peaches',
+    price: 2,
+    category: 'fruit',
+    popularity: 6,
+    rating: 18,
+    tags: ['healthy', 'sweet']
 }]
 
 
@@ -137,9 +153,10 @@ let foodArr = [{
 
 //CODE HERE
 
-const filteredFood = foodArr.filter((element) =>{
-    return element 
+const filteredFood = foodArr.filter((foodObj) =>{
+    return foodObj.tags.includes('family friendly')
 })
+// console.log(filteredFood)
 
 
 
@@ -183,7 +200,16 @@ const filteredFood = foodArr.filter((element) =>{
 */
 
 //CODE HERE
-
+function filterByProperty(property, number, type){
+    let filteredArray = foodArr.filter((foodObj) =>{
+        if(type === 'above'){
+            return foodObj[property] > number
+        }else if(type === 'below'){
+            return foodObj[property] < number
+        }
+    })
+    return filteredArray
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -193,3 +219,4 @@ const filteredFood = foodArr.filter((element) =>{
 */
 
 //CODE HERE
+console.log(filterByProperty('rating', 6, 'above'))
